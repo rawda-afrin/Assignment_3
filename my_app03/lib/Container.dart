@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class ContainerPage extends StatelessWidget {
@@ -8,8 +7,8 @@ class ContainerPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Container and Card"),
-        backgroundColor: const Color.fromARGB(255, 162, 76, 118),
+        title: const Text("My Container & Card"),
+        backgroundColor: const Color.fromARGB(255, 88, 76, 145),
         foregroundColor: Colors.white,
       ),
       body: Center(
@@ -17,34 +16,54 @@ class ContainerPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              height: 200,
-              width: 200,
-              margin: const EdgeInsets.all(20),
-              padding: const EdgeInsets.all(20),
+              height: 180,
+              width: 230,
+              padding: const EdgeInsets.all(15),
               alignment: Alignment.center,
               decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
                 border: Border.all(
-                  width: 5,
-                  color: Colors.purple,
+                  width: 4,
+                  color: Colors.deepPurple,
                 ),
-                gradient: const RadialGradient(
+                gradient: const LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
                   colors: [
-                    Color.fromARGB(95, 156, 48, 138),
-                    Color.fromARGB(115, 141, 33, 87),
+                    Color.fromARGB(255, 198, 170, 235),
+                    Color.fromARGB(255, 241, 190, 214),
                   ],
                 ),
               ),
-              child: const Text("Hello Container"),
+              child: const Text(
+                "Hello Container",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
+
+            const SizedBox(height: 30),
+
             SizedBox(
-              height: 200,
-              width: 200,
+              height: 170,
+              width: 230,
               child: Card(
-                color: Colors.cyanAccent,
-                elevation: 30,
-                shadowColor: Colors.purple,
+                color: Colors.amberAccent,
+                elevation: 15,
+                shadowColor: Colors.deepPurple,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 child: const Center(
-                  child: Text("Hello card"),
+                  child: Text(
+                    "Hello Card",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ),
             ),
