@@ -1,16 +1,15 @@
 
 import 'package:flutter/material.dart';
-import 'Container.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class Homepage extends StatelessWidget {
+  const Homepage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home"),
-        backgroundColor: const Color.fromARGB(255, 162, 76, 118),
+        title: const Text("Homepage 64B"),
+        backgroundColor: const Color.fromARGB(255, 225, 87, 23),
         foregroundColor: Colors.white,
         actions: [
           IconButton(
@@ -23,109 +22,103 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
+
       drawer: Drawer(
         child: ListView(
-          padding: EdgeInsets.zero,
           children: [
             const UserAccountsDrawerHeader(
-              accountName: Text("Rawdatul Jannat"),
-              accountEmail: Text("rawda.afrin@email.com"),
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 207, 111, 146),
-              ),
+              accountName: Text("Rawda"),
+              accountEmail: Text("rawda.afrin@gmail.com"),
             ),
+
             ListTile(
+              title: const Text("Homepage"),
               leading: const Icon(Icons.home),
-              title: const Text("Home"),
-              onTap: () => Navigator.pop(context),
+              hoverColor: Colors.lime,
+              onTap: () {},
             ),
+
             const Divider(),
+
+            ListTile(
+              title: const Text("Settings"),
+              leading: const Icon(Icons.settings),
+              hoverColor: Colors.lime,
+              onTap: () {},
+            ),
+
+            const Divider(),
+
             ListTile(
               leading: const Icon(Icons.person),
               title: const Text("Profile"),
-              onTap: () {},
-            ),
-            const Divider(),
-            ListTile(
-              leading: const Icon(Icons.settings),
-              title: const Text("Settings"),
-              onTap: () {},
-            ),
-            const Divider(),
-            ListTile(
-              leading: const Icon(Icons.notifications),
-              title: const Text("Notifications"),
-              onTap: () {},
-            ),
-            const Divider(),
-            ListTile(
-              leading: const Icon(Icons.info),
-              title: const Text("About"),
-              onTap: () {},
-            ),
-            const Divider(),
-            ListTile(
-              leading: const Icon(Icons.help),
-              title: const Text("Help & Support"),
-              onTap: () {},
-            ),
-            const Divider(),
-            ListTile(
-              leading: const Icon(Icons.logout),
-              title: const Text("Logout"),
+              trailing: IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.logout),
+              ),
               onTap: () {},
             ),
           ],
         ),
       ),
+
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const ContainerPage(),
-            ),
-          );
-        },
-        backgroundColor: const Color.fromARGB(255, 162, 76, 118),
+        onPressed: () {},
+        backgroundColor: const Color.fromARGB(255, 164, 103, 124),
         foregroundColor: Colors.white,
-        tooltip: "Open Container Page",
+        hoverColor: Colors.amber,
+        tooltip: "Write",
         shape: const CircleBorder(),
         child: const Icon(Icons.add),
       ),
+
       body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          TextButton(
-            onPressed: () {},
-            style: TextButton.styleFrom(
-              side: const BorderSide(),
-              backgroundColor: const Color.fromARGB(255, 78, 176, 241),
-              foregroundColor: Colors.white,
-              elevation: 10,
-              fixedSize: const Size(100, 50),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0, 20, 10, 0),
+            child: TextButton(
+              onPressed: () {},
+              style: TextButton.styleFrom(
+                side: const BorderSide(),
+                backgroundColor: Colors.blue,
+                foregroundColor: Colors.white,
+                shadowColor: Colors.amber,
+                elevation: 10,
+                fixedSize: const Size(100, 50),
+              ),
+              child: const Text("Blue"),
             ),
-            child: const Text("Blue"),
           ),
-          ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color.fromARGB(255, 59, 212, 141),
-              foregroundColor: Colors.white,
-              elevation: 10,
-              fixedSize: const Size(100, 50),
+
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0, 20, 10, 0),
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green,
+                foregroundColor: Colors.white,
+              ),
+              child: const Text("Green"),
             ),
-            child: const Text("Green"),
           ),
-          OutlinedButton(
-            onPressed: () {},
-            child: const Text("Pink"),
+
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0, 20, 10, 0),
+            child: OutlinedButton(
+              onPressed: () {},
+              style: OutlinedButton.styleFrom(
+                side: const BorderSide(
+                  color: Colors.purple,
+                  width: 2,
+                ),
+                foregroundColor: Colors.purple,
+                backgroundColor: Colors.amber,
+              ),
+              child: const Text("Yellow"),
+            ),
           ),
         ],
       ),
     );
   }
 }
-
-
-
